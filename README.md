@@ -1,5 +1,4 @@
 # Advent of Code 2024
 
-    Containing solutions for the Advent of Code 2024 puzzles, day 1 - day 8.
-    All solutions can be ran instantly from the compiled .cpp file. The solutions
-    expect input from stdin, not a file.
+    Containing solutions for some of the Advent of Code 2024 puzzles. All solutions can be ran
+    instantly from the compiled .cpp file, and expect input from stdin.
