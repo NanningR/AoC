@@ -1,0 +1,85 @@
+# ---- General ----
+# Object files
+*.o
+*.obj
+*.lo
+*.slo
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Debug or release directories
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+build-*/
+bin/
+lib/
+
+# ---- CMake ----
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+compile_commands.json
+CTestTestfile.cmake
+install_manifest.txt
+
+# ---- Visual Studio Code ----
+.vscode/
+.vscode-test/
+.history/
+*.code-workspace
+
+# ---- Clangd (C++ tooling) ----
+.clangd/
+.cache/
+.clangd-cache/
+
+# ---- OS Specific ----
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ---- WSL, Docker, etc. ----
+*.swp
+*.swo
+
+# ---- Other build tools ----
+# Ninja
+.ninja_deps
+.ninja_log
+
+# ---- Logs and temporary files ----
+*.log
+*.tmp
+*.temp
+*.bak
+*.old
