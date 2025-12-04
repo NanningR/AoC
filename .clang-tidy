@@ -1,0 +1,63 @@
+---
+# .clang-tidy for modern C++ (C++23) projects
+# Tailored for WSL + GCC + Clang-Tidy workflows
+# Focus: correctness (bugprone, analyzer), modernization, performance, readability, and consistency
+
+Checks: >
+  -*,
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  bugprone-*,
+  performance-*,
+  readability-*,
+  modernize-*,
+  cppcoreguidelines-*,
+  misc-*,
+  -modernize-use-trailing-return-type,
+  -modernize-make-unique,
+  -modernize-loop-convert,
+  -modernize-use-emplace,
+  -modernize-use-nullptr,
+  -modernize-use-equals-default,
+  -modernize-use-equals-delete,
+  -readability-magic-numbers,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -cppcoreguidelines-pro-type-vararg,
+  -cppcoreguidelines-owning-memory,
+
+CheckOptions:
+  # Modernize / consistency options
+  - key: modernize-use-nullptr.NullMacros
+    value: "NULL"
+  - key: modernize-use-override.IgnoreDestructors
+    value: "1"
+
+  # Naming convention preferences
+  - key: readability-identifier-naming.ClassCase
+    value: CamelCase
+  - key: readability-identifier-naming.FunctionCase
+    value: camelBack
+  - key: readability-identifier-naming.ParameterCase
+    value: camelBack
+  - key: readability-identifier-naming.VariableCase
+    value: lower_case
+  - key: readability-identifier-naming.MemberCase
+    value: lower_case
+  - key: readability-identifier-naming.PrivateMemberPrefix
+    value: m_
+
+# Treat all code check results as warnings (you can promote some to errors if desired)
+WarningsAsErrors: ""
+
+# Only lint source files in your project, skip system headers
+HeaderFilterRegex: "^(?!/usr/).*"
+
+# Avoid excessive noise from STL/template instantiations
+AnalyzeTemporaryDtors: false
+AnalyzeTemplateInstantiations: false
+
+# Keep formatting separate (use clang-format for formatting)
+FormatStyle: none
+
+---
+

@@ -1,7 +1,8 @@
-#include <iostream>
-#include <vector>
 #include <algorithm>
+#include <iostream>
+#include <ranges>
 #include <string>
+#include <vector>
 
 using namespace std;
 using ll = long long;

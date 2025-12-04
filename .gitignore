@@ -46,7 +46,7 @@ CTestTestfile.cmake
 install_manifest.txt
 
 # ---- Visual Studio Code ----
-.vscode/
+#.vscode/
 .vscode-test/
 .history/
 *.code-workspace

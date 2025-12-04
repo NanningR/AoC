@@ -1,0 +1,45 @@
+{
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "Debug",
+      "command": "/usr/bin/g++-13",
+      "args": [
+        "-std=c++23",
+        "-fdiagnostics-color=always",
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": "build",
+      "detail": "Debug build with C++23 and no optimization"
+    },
+    {
+      "type": "cppbuild",
+      "label": "Release",
+      "command": "/usr/bin/g++-13",
+      "args": [
+        "-std=c++23",
+        "-fdiagnostics-color=always",
+        "-O3",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build"
+      },
+      "detail": "Optimized release build with C++23"
+    }
+  ],
+  "version": "2.0.0"
+}

@@ -1,0 +1,12 @@
+{
+  "C_Cpp.default.compilerPath": "/usr/bin/g++-13",
+  "files.associations": {
+    "iostream": "cpp",
+    "string": "cpp",
+    "istream": "cpp",
+    "ostream": "cpp",
+    "iosfwd": "cpp",
+    "random": "cpp",
+    "stdexcept": "cpp"
+  }
+}

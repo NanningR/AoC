@@ -1,8 +1,9 @@
-#include <iostream>
-#include <vector>
-#include <string>
 #include <algorithm>
+#include <iostream>
+#include <ranges>
 #include <set>
+#include <string>
+#include <vector>
 
 using namespace std;
 using ll = long long;
@@ -12,7 +13,6 @@ namespace
 {
     int n = 57, answer = 0;
     const int original = n;
-    vector<vector<int>> numbers(original);
 
     bool trailheadUnique(set<pi> const &foundTrailheads, const pi trailhead)
     {
@@ -20,7 +20,7 @@ namespace
                                { return el == trailhead; });
     }
 
-    bool moveAllowed(vector<pi> const &visitedLocations, const pi posOld, const pi posNew)
+    bool moveAllowed(vector<vector<int>> const &numbers, vector<pi> const &visitedLocations, const pi posOld, const pi posNew)
     {
         bool posAllowed = posNew.first >= 0 && posNew.first < original && posNew.second >= 0 && posNew.second < original;
         bool valueAllowed = false;
@@ -36,7 +36,7 @@ namespace
         return posAllowed && valueAllowed && visitAllowed;
     }
 
-    void findRoutes(set<pi> &foundTrailheads, vector<pi> &visitedLocations, const pi previous)
+    void findRoutes(vector<vector<int>> const &numbers, set<pi> &foundTrailheads, vector<pi> &visitedLocations, const pi previous)
     {
         if (numbers[previous.first][previous.second] == 9)
         {
@@ -56,10 +56,10 @@ namespace
 
         for (const auto &el : moves)
         {
-            if (moveAllowed(visitedLocations, previous, el))
+            if (moveAllowed(numbers, visitedLocations, previous, el))
             {
                 visitedLocations.push_back(el);
-                findRoutes(foundTrailheads, visitedLocations, el);
+                findRoutes(numbers, foundTrailheads, visitedLocations, el);
                 visitedLocations.pop_back();
             }
         }
@@ -73,6 +73,7 @@ int main()
 
     int index = 0;
     set<pi> trailheads;
+    vector<vector<int>> numbers(original);
 
     while (n--)
     {
@@ -94,7 +95,7 @@ int main()
         vector<pi> visitedLocations;
         set<pi> foundTrailheads;
         // traverse all paths with recursive backtracking
-        findRoutes(foundTrailheads, visitedLocations, el);
+        findRoutes(numbers, foundTrailheads, visitedLocations, el);
     }
 
     cout << answer << "\n";
